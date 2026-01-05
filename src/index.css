@@ -1,1 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+
 @import "tailwindcss";
+
+
+
+body {
+  font-family: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-pt {
+  font-family: "PT Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
