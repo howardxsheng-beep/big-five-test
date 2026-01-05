@@ -12,3 +12,15 @@ body {
 .font-pt {
   font-family: "PT Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
+@theme {
+ 
+  --color-black-900: #000000DE; 
+  --color-black-700: #00000098; 
+  --color-black-500: #00000060; 
+
+  --color-white-900: #FFFFFF;   
+  --color-white-700: #FFFFFFDE; 
+
+
+  --color-blue-500: #4F61FF;    
+}
