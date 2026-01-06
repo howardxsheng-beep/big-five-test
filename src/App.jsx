@@ -1,16 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from "react";
+import { fetchBigFiveData } from "./api/fetchData";
+import Landing from "./pages/Landing";
 
+export default function App() {
+  const [data, setData] = useState(null);
 
-function App() {
+  useEffect(() => {
+    (async () => {
+      const d = await fetchBigFiveData();
+      setData(d);
+    })();
+  }, []);
 
+  if (!data) return (
+    <div className="min-h-screen flex items-center justify-center ">
+      <div className="text-black-700">Loading...</div>
+    </div>
+  );
 
-  return (
-    <>
-      <h1 className='text-red-400'>Hello</h1>
-    </>
-  )
+  return <Landing data={data} />;
 }
-
-export default App
