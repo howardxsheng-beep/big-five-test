@@ -82,23 +82,23 @@ export default function Question({ data, onDone }) {
 
         <div className="flex-1 flex flex-col px-25">
           <div className="flex flex-col mx-auto w-full max-w-2xl flex-1 xl:mt-36">
-            <p className="font-pt text-[120px] italic self-start -ml-12 tracking-tight leading-[1.17] mb-4">
+            <p className="font-pt text-7xl xl:text-[120px] italic self-start -ml-12 tracking-tight leading-[1.17] mb-4">
               Q
             </p>
-            <p className="text-5xl font-light">{current.title}</p>
+            <p className="text-3xl xl:text-5xl font-light">{current.title}</p>
           </div>
 
           <div className="mt-auto mb-12 text-black-500">
-            <p className="font-bold">五大性格特質心理測驗</p>
+            <p className="text-base font-bold">五大性格特質心理測驗</p>
             <p className="text-xs font-light">Big Five personality traits test</p>
           </div>
         </div>
       </div>
 
       {/* Right */}
-      <div className="w-full xl:w-1/2 bg-white xl:h-screen flex flex-col">
+      <div className="w-full xl:w-1/2 bg-white xl:h-dvh flex flex-col">
 
-        <div className="px-24 pt-10 text-right text-2xl text-black-500 italic">
+        <div className="pb-5 xl:pb-0 px-24 pt-10 text-right text-2xl text-black-500 italic">
           {currentIdx + 1}/{total}
         </div>
 
