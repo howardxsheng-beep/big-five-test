@@ -1,16 +1,15 @@
 
 import { useMemo, useState } from "react";
-import { BG_CLASS, MOCK_SCORES } from "./data";
+import { BG_CLASS } from "./data";
 import { buildResultModel, degreeZh } from "./model";
 import HeroSection from "./HeroSection";
 import BodySection from "./BodySection";
 
 export default function ResultView({ data, scores, onBackToHome }) {
-  const finalScores = scores ?? MOCK_SCORES;
 
   const results = useMemo(
-    () => buildResultModel(data, finalScores),
-    [data, finalScores]
+    () => buildResultModel(data, scores),
+    [data, scores]
   );
 
   const [activeIdx, setActiveIdx] = useState(0);

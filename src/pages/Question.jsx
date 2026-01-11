@@ -1,5 +1,7 @@
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState } from "react";
 import OptionList from "../components/OptionList";
+import { useNavigate } from "react-router-dom";
+
 
 function buildQuestions(data) {
   const list = data.problemList;
@@ -16,20 +18,33 @@ function buildQuestions(data) {
     }));
   });
 }
+function toTraitScores(answers = {}) {
+
+  const sums = { a: 0, c: 0, e: 0, n: 0, o: 0 };
+
+  for (const [qid, value] of Object.entries(answers)) {
+    const prefix = qid[0]?.toLowerCase(); 
+    if (prefix in sums) sums[prefix] += Number(value) || 0;
+  }
+
+  return {
+    agreeableness: sums.a,
+    conscientiousness: sums.c,
+    extroversion: sums.e,
+    neuroticism: sums.n,
+    openness: sums.o,
+  };
+}
 
 
 
-
-export default function Question({ data, onDone }) {
+export default function Question({ data }) {
+  const navigate = useNavigate();
   const questions = useMemo(() => buildQuestions(data), [data]);
   const total = questions.length;
 
   const [currentIdx, setCurrentIdx] = useState(0);
-
-
   const [answers, setAnswers] = useState({}); 
-
-  const [scores, setScores] = useState({}); 
 
   const current = questions[currentIdx];
   const selectedFraction = current ? (answers[current.id] ?? null) : null;
@@ -37,15 +52,7 @@ export default function Question({ data, onDone }) {
   if (!current) return null;
 
   const handleSelect = (fraction) => {
-    const prev = answers[current.id] ?? 0;
-
     setAnswers((a) => ({ ...a, [current.id]: fraction }));
-
-    setScores((s) => {
-      const prevTraitScore = s[current.traitKey] ?? 0;
-      const delta = fraction - prev;
-      return { ...s, [current.traitKey]: prevTraitScore + delta };
-    });
   };
 
   const goPrev = () => setCurrentIdx((i) => Math.max(0, i - 1));
@@ -55,14 +62,13 @@ export default function Question({ data, onDone }) {
 
     const isLast = currentIdx === total - 1;
     if (isLast) {
-      onDone?.({ answers, scores });
-      return;
+    const finalScores = toTraitScores(answers); // 五大總分
+    navigate("/result", { state: { scores: finalScores } });
+    return;
     }
     setCurrentIdx((i) => i + 1);
   };
-  useEffect(()=>{
-    console.log(answers);
-},[answers])
+
 
   return (
     <div className="w-full flex flex-col xl:flex-row overflow-hidden">
