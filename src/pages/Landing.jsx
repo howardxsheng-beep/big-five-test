@@ -1,5 +1,6 @@
 
 const homeBannerBg = "bg-[url('./assets/imgs/home-banner-bg.png')]";
+import { Link } from "react-router-dom";
 
 export default function Landing({ data }) {
     const zh = (data.name.zh).replace("(簡版)", "");
@@ -38,8 +39,8 @@ export default function Landing({ data }) {
                             {data.description}
                         </p>
 
-                        <a
-                            href="#"
+                        <Link
+                            to="/question"
                             className="px-18.25 inline-flex items-center justify-center 
                          bg-blue-500 text-white
                          text-[32px] tracking-normal leading-6
@@ -49,7 +50,7 @@ export default function Landing({ data }) {
                         <span className="ml-2 material-icons !text-[48px] ">
                                 arrow_forward
                         </span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>
