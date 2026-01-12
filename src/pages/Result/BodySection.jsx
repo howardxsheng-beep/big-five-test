@@ -57,12 +57,12 @@ export default function BodySection({
               inline-flex items-center gap-2
               text-[32px] font-bold
               cursor-pointer
-              hover:bg-black-900 hover:text-white
-              transition-colors leading-12 mt-4 xl:mt-0
+              hover:bg-black-900 hover:text-white duration-700
+              transition-colors leading-12 mt-4 xl:mt-0 group
             "
           >
             重新測驗
-            <span className="material-icons !text-[48px]">arrow_forward</span>
+            <span className="material-icons !text-[48px] group-hover:translate-x-2 duration-200">arrow_forward</span>
           </button>
         ) : (
           <div className="flex text-4xl font-light text-black-900 items-center">
@@ -70,10 +70,10 @@ export default function BodySection({
             <button
               type="button"
               onClick={onNext}
-              className="font-bold inline-flex items-center gap-2 cursor-pointer"
+              className="font-bold inline-flex items-center gap-2 cursor-pointer group"
             >
               {next.zhName}
-              <span className="material-icons !text-[48px] leading-none text-blue-500">
+              <span className="material-icons !text-[48px] leading-none text-blue-500 group-hover:translate-x-2 duration-200">
                 arrow_forward
               </span>
             </button>

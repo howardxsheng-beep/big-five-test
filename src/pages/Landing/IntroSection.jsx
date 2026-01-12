@@ -25,14 +25,14 @@ export default function IntroSection({ data }) {
 
         {/* Right */}
         <div className="flex justify-end text-left gap-7.5 max-[870px]:flex-col">
-          <p className="max-w-112.5 text-left text-black-700">
+          <p className="max-w-112.5 leading-6  font-light text-left text-black-700">
             {data?.description}
           </p>
 
           <Link
             to="/question"
             className="px-18.25 inline-flex items-center justify-center 
-              bg-blue-500 text-white
+              bg-blue-500 text-white font-bold
               text-[32px] tracking-normal leading-6
               cursor-pointer max-[870px]:h-23 xl:hover:bg-blue-600"
           >
