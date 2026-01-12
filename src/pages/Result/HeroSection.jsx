@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function HeroSection({ current, results, activeIdx, onTabChange, bgClass }) {
   return (
     <section className="relative h-[50vh] text-white">
@@ -8,12 +10,12 @@ export default function HeroSection({ current, results, activeIdx, onTabChange, 
       <div className="relative z-10 max-w-372.5 mx-auto px-10 h-full flex flex-col">
 
         <div className="flex flex-col xl:flex-row items-start justify-between pt-6">
-          <div>
+          <Link to="/" className="hover:scale-110 duration-700">
             <p className="text-base font-bold">五大性格特質心理測驗</p>
             <p className="text-xs font-light leading-4.5">
               Big Five personality traits test
             </p>
-          </div>
+          </Link>
 
           <div className="flex gap-5 text-base font-light leading-6 xl:gap-12">
             {results.map((r, idx) => (
