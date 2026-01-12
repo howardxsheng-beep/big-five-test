@@ -1,0 +1,1 @@
+export { BG_CLASS } from "./../../data/result/data";
