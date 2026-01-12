@@ -4,11 +4,11 @@ export default function LeftPanel({ currentIdx, total, title, onPrev }) {
       <button
         type="button"
         onClick={onPrev}
-        className="bg-blue-500 w-24 h-24 inline-flex items-center justify-center cursor-pointer disabled:opacity-40"
+        className="bg-blue-500 w-24 h-24 inline-flex items-center justify-center cursor-pointer disabled:opacity-40 group"
         disabled={currentIdx === 0}
         aria-label="上一題"
       >
-        <span className="material-icons text-white !text-[48px] leading-none">
+        <span className="material-icons text-white !text-[48px] leading-none group-hover:scale-120 duration-200">
           arrow_back
         </span>
       </button>
