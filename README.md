@@ -2,7 +2,7 @@
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?logo=react)](https://react.dev/)  [![Vite](https://img.shields.io/badge/Vite-7.2-646CFF?logo=vite)](https://vitejs.dev/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
 
 這是一個以 五大人格特質（Big Five） 為主題的互動式心理測驗網站。使用者從 Landing Page 進入測驗流程，逐題作答後，系統會依照各題分數累加並換算成五大特質的總分，最後導向結果頁呈現個人特質分析與對應文字敘述。
-### 網站連結：{%preview https://howardxsheng-beep.github.io/big-five-test/ %}
+### 網站連結：https://howardxsheng-beep.github.io/big-five-test/ 
 
 
 
